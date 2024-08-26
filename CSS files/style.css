@@ -1,0 +1,405 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --a:0;
+}
+
+body {
+    background-color: black;
+}
+
+.container {
+    display: flex;
+    gap: 5px;
+    margin: 5px;
+}
+
+
+.left {
+    padding: 5px 2px 0px 3px;
+    width: 40vw;
+    height: 97vh;
+    position: sticky;
+    top: 5px;
+    /* border: 2px red solid; */
+    border-radius: 10px;
+
+}
+
+.home div {
+    padding: 8px;
+}
+.logo img{
+    width: 100px;
+}
+
+.home {
+    height: 20%;
+    background-color: #121212;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.cross-btn{
+    border: 2px solid red;
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: fit-content;
+    cursor: pointer;
+   
+}
+
+.cross-btn img{
+    width: 20px;
+}
+
+
+.home-logo {
+    display: flex;
+    font-size: 0.8rem;
+    gap: 10px;
+    width: 90%;
+}
+
+.home-logo img {
+    width: 20px;
+
+}
+
+.library {
+    /* width: 30vw; */
+    position: relative;
+    border-radius: 10px;
+    height:70vh;
+    margin-top: 5px;
+    padding: 10px;
+    background-color: #121212;
+}
+
+.library-logo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.songlist {
+    margin-top: 5px;
+    overflow-y:auto;
+    padding: 10px;
+    height: 300px;
+
+}
+
+.song {
+    height: 100%;
+    /* background-color: #555; */
+}
+
+.songs {
+    background-color: #55555500;
+}
+
+.songs img {
+    width: 20px;
+
+}
+
+.songlist ul {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.songlist ul li {
+    display: flex;
+    width: 100%;
+    /* background-color: white; */
+    /* padding: 20px; */
+    gap: 10px;
+    cursor: pointer;
+    padding: 10px 5px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 5px;
+    height: 50px;
+    font-size: 0.7rem;
+}
+
+.footer ul {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.footer li {
+    margin-right: 5px;
+    list-style: none;
+}
+
+.footer li a {
+    color: grey;
+    text-decoration: none;
+
+}
+
+.right {
+    width: 100%;
+    border-radius: 10px;
+    padding: 5px 0px;
+
+}
+
+
+.nav-bar {
+    position: sticky;
+     top: 10px;
+     /* margin-bottom: 5px; */
+    border-radius: 10px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    background-color: #121212;
+
+}
+
+.nav-image {
+    margin-left: 5px;
+    width: 50px;
+    display: flex;
+    gap: 20px;
+
+}
+
+.bar {
+    margin-left: 5px;
+    display: none;
+    cursor: pointer;
+}
+
+.arrow-block {
+    display: flex;
+
+}
+
+.arrow {
+    display: flex;
+    margin-left: 5px;
+    gap: 10px;
+    background-color: black;
+    width: 25px;
+    height: 25px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.nav-image img {
+    width: 25px;
+    height: 25px;
+}
+
+.button {
+    margin: 15px;
+}
+
+.btn-signin {
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: #393939;
+    color: rgb(177, 173, 173);
+    /* width: 80px; */
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all .5s;
+
+}
+
+.btn-login {
+    padding: 10px 20px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all .5s;
+
+}
+
+.content {
+    color: white;
+    height: 80vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items:flex-start;
+    overflow-y: auto;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgb(52, 52, 52);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(99, 97, 97);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.card {
+    width: 160px;
+    /* border: 2px solid rgb(156, 154, 154); */
+    border-radius: 4px;
+    background-color: #121212;
+    height: 250px;
+    padding: 10px;
+    margin: 5px;
+    transition: all .9s;
+}
+
+.card-image {
+    position: relative;
+    width: 160px;
+    object-fit: contain;
+}
+
+.card-image > img {
+    /* overflow-y: hidden; */
+    width: 160px;
+    border-radius: 2px;
+    object-fit: contain;
+}
+.card-play{
+    opacity: var(--a);
+    position: absolute;
+ border-radius: 50%;
+    width: 40px;
+    background-color: green;
+    height: 40px;
+    bottom: 20px;
+    right: 10px;
+    transition: all 1s ease-out;
+}
+.card-play > img{
+    z-index: 1;
+    position: absolute;
+    width: 25px;
+    right: 7px;
+    bottom: 8px;
+}
+
+.card-text {
+    margin-top: 5px;
+}
+
+.play-nav {
+    display: flex;
+    justify-content: center;
+    /* align-items: ; */
+    /* z-index: 10; */
+    position: fixed;
+    color: white;
+    bottom: 0px;
+    border-radius: 50px;
+    background-color: rgb(55, 55, 55);
+    width: 65vw;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.player {
+    display: flex;
+    width: 98%;
+    padding: 3px 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.play {
+    display: flex;
+    margin: 10px;
+    /* position: fixed; */
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.play :first-child {
+    width: 20px;
+}
+
+.play :last-child {
+    width: 20px;
+}
+
+.play img {
+    width: 30px;
+    cursor: pointer;
+}
+
+.player-info {
+    width: 200px;
+}
+
+.player-time {
+    text-align: center;
+    width: 200px;
+}
+.time-value{
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.range{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+.range img{
+    width: 20px;
+}
+.range input{
+    width: 100px;
+}
+
+
+.seakbar {
+    height: 5px;
+    width: 95%;
+    position: absolute; 
+    bottom: 2px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    position: relative;
+    left: 0px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50px;
+    transform: left 0.5s;
+    cursor: pointer;
+}

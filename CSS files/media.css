@@ -1,0 +1,76 @@
+.filter {
+    filter: invert(1);
+}
+
+.songs li:active {
+    background-color: rgb(225, 225, 225);
+}
+
+.arrow:hover{
+    opacity: 0.5;
+}
+.btn:hover{
+    opacity: 0.5;
+    font-size: smaller;
+}
+.card:hover{
+    background-color: rgb(105, 103, 103);
+    cursor: pointer;
+    --a: 1;
+}
+
+@media (max-width : 1150px) {
+    .left {
+        /* font: 10px; */
+        /* margin-top: 50px; */
+        width: 50vw;
+        /* height: 50%; */
+        position: absolute;
+        cursor: pointer;
+        z-index: 1;
+        left: -100%;
+        transition: all 0.2s;
+    }
+    .library {
+        width: 100%;
+    }
+    .home{
+        width: 100%;
+    }
+
+    .play-nav {
+        width: 98vw;
+    }
+    .nav-image{
+        width: 70px;
+    }
+    .bar{
+        /* padding: 5px; */
+        display:inline;
+      }
+
+      .cross-btn{
+        display: inline;
+        right: -5px;
+      }
+      .content{
+        justify-content: center;
+      }
+}
+@media (max-width : 900px){
+    .play-nav{
+        height: 100px;
+        width: 95vw;
+        border-radius: 7px;
+        margin: 5px;
+    }
+    .player{
+        flex-direction: column;
+        gap: 0px;
+        height: 80px;
+    }
+    .player-info{
+        width: 100%;
+        text-align: center;
+    }
+}

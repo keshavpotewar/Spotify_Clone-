@@ -16,7 +16,7 @@ search_logo.addEventListener("click", () => {
 
 let curentAudio = new Audio();
 let currentFolder;
-let songs;
+let songs = [];
 
 function musictime(seconds) {
     if (isNaN(seconds) || seconds < 0) {
@@ -36,7 +36,9 @@ function musictime(seconds) {
 
 async function getsongs(folder) {
     currentFolder = folder;
-    let a = await fetch(`/${folder}/`);
+    console.log(folder)
+    let a = await fetch(`${folder}/`);
+    console.log(a)
     let response = await a.text();
     let div = document.createElement("div")
     div.innerHTML = response
@@ -75,7 +77,7 @@ async function getsongs(folder) {
 
 let playmusic = (track, pause = false) => {
     // let audio = new Audio("songs/" + track)
-    curentAudio.src = `/${currentFolder}/` + track
+    curentAudio.src = `${currentFolder}/` + track
     if (!pause) {
         curentAudio.play()
         play.src = "img/pause.svg"
@@ -89,22 +91,22 @@ let playmusic = (track, pause = false) => {
 
 
 async function displayAlbums() {
-    let a = await fetch(`/songs/`);
+    let a = await fetch(`songs/`);
     let response = await a.text();
     let div = document.createElement("div")
     div.innerHTML = response
     let as = div.getElementsByTagName("a")
 
-
+//  console.log(a)
     let cardcontainer = document.querySelector(".content");
 
     let array = Array.from(as);
     for (let index = 0; index < array.length; index++) {
         const e = array[index];
-        if (e.href.includes("/songs/") && !e.href.includes(".htaccess")) {
+        if (e.href.includes("/songs/")) {
             let folder = e.href.split("/").slice(-1)[0];
             //get the meta data of the folder
-            let a = await fetch(`/songs/${folder}/info.json`);
+            let a = await fetch(`songs/${folder}/info.json`);
             let response = await a.json();
             cardcontainer.innerHTML += `  <div data-folder="${folder}" class="card">
                     <div class="card-image">
@@ -126,6 +128,8 @@ async function displayAlbums() {
         Array.from(document.getElementsByClassName("card")).forEach(e => {
             e.addEventListener("click", async item => {
                 songs = await getsongs(`songs/${item.currentTarget.dataset.folder}`)
+                // console.log(item.currentTarget.dataset.folder)
+                console.log(songs)
                 playmusic(songs[0])
             })
         })
@@ -135,7 +139,7 @@ async function displayAlbums() {
 }
 
 async function main() {
-    await getsongs("songs/ncs")
+    await getsongs("/songs/cs")
     playmusic(songs[0], true)
 
     // display all the albums on page

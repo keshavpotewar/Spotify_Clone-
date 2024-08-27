@@ -30,14 +30,15 @@ body {
 }
 
 .home div {
-    padding: 8px;
+    padding: 10px;
 }
 .logo img{
     width: 100px;
+    cursor: pointer;
 }
 
 .home {
-    height: 20%;
+    height: 25%;
     background-color: #121212;
     padding: 10px;
     border-radius: 10px;
@@ -64,6 +65,7 @@ body {
     font-size: 0.8rem;
     gap: 10px;
     width: 90%;
+    cursor: pointer;
 }
 
 .home-logo img {
@@ -72,16 +74,19 @@ body {
 }
 
 .library {
-    /* width: 30vw; */
-    position: relative;
+    width: 30vw;
+    /* position: relative; */
     border-radius: 10px;
-    height:70vh;
+    height:65vh;
     margin-top: 5px;
     padding: 10px;
     background-color: #121212;
 }
 
 .library-logo {
+    width: 80%;
+    padding:0px 20px;
+    align-self: center;
     display: flex;
     justify-content: space-between;
 }
@@ -245,7 +250,8 @@ body {
 
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
+    height: 5px;
 }
 
 /* Track */
@@ -262,6 +268,8 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+
+
 
 .card {
     width: 160px;
@@ -296,6 +304,7 @@ body {
     bottom: 20px;
     right: 10px;
     transition: all 1s ease-out;
+    
 }
 .card-play > img{
     z-index: 1;

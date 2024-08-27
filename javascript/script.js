@@ -139,7 +139,7 @@ async function displayAlbums() {
 }
 
 async function main() {
-    await getsongs("/songs/cs")
+    await getsongs("songs/ncs")
     playmusic(songs[0], true)
 
     // display all the albums on page
